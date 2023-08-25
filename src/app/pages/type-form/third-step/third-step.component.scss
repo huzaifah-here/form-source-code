@@ -1,0 +1,51 @@
+.add-service-button2{
+    color: #0142ac;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 14px;
+    background-color: #eee;
+    border-radius: 5px;
+    padding: 8px;
+    padding-right: 5px;
+    display: inline-block;
+    text-decoration: none;
+
+    margin-bottom: 5px;
+    .ml-3{
+        margin-left: 10px;
+    }
+    mat-icon{
+        font-size: 18px;
+        height: 16px;
+        width: 24px;
+        position: relative;
+        top: 2px;
+    }
+}
+.pl-1{
+    padding-left: 2px;
+}
+.pr-1{
+    padding-right: 2px;
+}
+.plusIcon{
+    // position: absolute;
+    // right: 0;
+    cursor: pointer;
+    top: 10px;
+    display: inline-flex;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    z-index: 1;
+    align-items: center;
+    mat-icon{
+        margin-right: 5px;
+    }
+}
+
+.third-step .aboutContent-text {
+
+    max-width: 300px;
+    margin: 0 auto;
+}

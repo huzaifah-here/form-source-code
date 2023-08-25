@@ -1,0 +1,100 @@
+<section >
+  <mat-vertical-stepper [linear]="false" #stepper [animationDuration]="'100'">
+    <mat-step [stepControl]="formGroup">
+      <app-message-step></app-message-step>
+    </mat-step>
+    <mat-step [stepControl]="formGroup">
+      <app-zero-step (onFormValueChange)="email=$event"></app-zero-step>
+    </mat-step>
+    <mat-step [stepControl]="formGroup">
+      <app-first-step (onFormValueChange)="setFormValue('firstCtrl', $event)"></app-first-step>
+    </mat-step>
+    <mat-step [stepControl]="formGroup">
+      <app-second-step (onFormValueChange)="setFormValue('secondCtrl', $event)"></app-second-step>
+    </mat-step>
+    <mat-step [stepControl]="formGroup">
+      <app-writing-samples ></app-writing-samples>
+    </mat-step>
+    <mat-step [stepControl]="formGroup">
+      <app-upload-cv></app-upload-cv>
+    </mat-step>
+    <mat-step [stepControl]="formGroup">
+      <app-third-step (onFormValueChange)="setFormValue('thirdCtrl', $event)"></app-third-step>
+    </mat-step>
+    <mat-step [stepControl]="formGroup">
+      <app-fourth-step (onFormValueChange)="setFormValue('fourthCtrl', $event)"></app-fourth-step>
+    </mat-step>
+    <mat-step [stepControl]="formGroup">
+      <app-fifth-step (onFormValueChange)="setFormValue('fifthCtrl', $event)"></app-fifth-step>
+    </mat-step>
+    <mat-step [stepControl]="formGroup">
+      <app-sixth-step (onFormValueChange)="setFormValue('sixthCtrl', $event)"></app-sixth-step>
+    </mat-step>
+    <mat-step>
+      <div class="Done-wrapper">
+        <div class="done-wrapper-inner">
+          <ng-template matStepLabel>Done</ng-template>
+          <h2>You are now done. <span class="lnr lnr-smile"></span></h2>
+          <div>
+          <button class="back-btn" mat-button matStepperPrevious><span class="lnr lnr-arrow-left"></span> Back</button>
+          <button class="reset-btn" mat-button [disabled]="getRequestInProgress" (click)="save(stepper)"><span class="lnr lnr-save"></span> Save</button>
+        </div>
+      </div>
+      </div>
+
+    </mat-step>
+  </mat-vertical-stepper>
+
+  <div class="footer-wrapperstyles__FooterWrapper-sc-12dpj1x-0 irWqeX">
+    <div aria-hidden="false"></div>
+    <div class="Root-sc-__sc-1ckh2u2-0 gvazOW">
+      <div data-qa="fixed-footer" class="FooterWrapper-sc-__sc-1ckh2u2-1 cKCSHT">
+        <div class="ButtonsWrapper-sc-__sc-1ckh2u2-2 kFDtMt">
+          <div class="LeftButtonsWrapper-sc-__sc-1ckh2u2-5 foyahR">
+            <nav class="Navigation-sc-__sc-1ckh2u2-4 cXBHAG">
+              <button  (click)="stepper.next()" aria-label="Navigate to next question"  class="ButtonWrapper-sc-__sc-1qu8p4z-0 jZISwa">
+										<span class="FlexWrapper-sc-__sc-1qu8p4z-1 hSBRqm">
+											<span class="ButtonTextWrapper-sc-__sc-1qu8p4z-4 ffdgGn">
+												<span class="TextWrapper-sc-__sc-1f8vz90-0 bzehgl"></span>
+											</span>
+											<span class="Spacer-sc-__sc-1fl5ef-0 hmVfJe">
+												<span class="IconWrapper-sc-__sc-1qu8p4z-5 csgEuC">
+													<span class="Boundary-sc-__sc-184gmm6-0 eJaVAf">
+														<svg height="9" width="14">
+															<path fill="#fff" d="M12.293.293l1.414 1.414L7 8.414.293 1.707 1.707.293 7 5.586z"></path>
+														</svg>
+													</span>
+												</span>
+											</span>
+										</span>
+              </button>
+              <div class="ButtonDivider-sc-__sc-1ckh2u2-3 giBZcT"></div>
+              <button (click)="stepper.previous()"  aria-label="Navigate to previous question" data-tracking="footer_arrow_up" class="ButtonWrapper-sc-__sc-1qu8p4z-0 cdnyXe">
+		          		<span class="FlexWrapper-sc-__sc-1qu8p4z-1 hSBRqm">
+					<span class="ButtonTextWrapper-sc-__sc-1qu8p4z-4 ffdgGn">
+						<span class="TextWrapper-sc-__sc-1f8vz90-0 bzehgl"></span>
+					</span>
+					<span class="Spacer-sc-__sc-1fl5ef-0 hmVfJe">
+						<span class="IconWrapper-sc-__sc-1qu8p4z-5 csgEuC">
+							<span class="Boundary-sc-__sc-184gmm6-0 eJaVAf">
+								<svg height="9" width="14">
+									<path fill="#fff" d="M11.996 8.121l1.414-1.414L6.705 0 0 6.707l1.414 1.414 5.291-5.293z"></path>
+								</svg>
+							</span>
+						</span>
+					</span>
+				</span>
+              </button>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="SafeAreaBottom-sc-__sc-10trd1y-0 bcLYUr"></div>
+    </div>
+  </div>
+
+</section>
+
+
+
+

@@ -1,0 +1,61 @@
+<form [formGroup]="form">
+
+  <div class="row min-h-100vh stepper-wrapper">
+    <div class="col-md-6 p-0 pl-40 position-relative align-self-center">
+      <div class="row">
+        <ng-container *ngIf="sectionFlag">
+          <div class="col-md-12 mb-4">
+            <h1 class="pl-35">
+              <span>15 <svg class="renderer-components-block-counter__arrow-icon css-who0lh" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></svg></span>
+              Get In Touch</h1>
+            <input  placeholder="(Leave blank to keep default text)" class="form-control" formControlName="title" required>
+          </div>
+
+          <div class="col-md-12 mb-4">
+            <h1 class="pl-35">
+              <span>16 <svg class="renderer-components-block-counter__arrow-icon css-who0lh" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></svg></span>
+              Let's Discuss  How Can I Help you with your project</h1>
+            <input  placeholder="(Leave blank to keep default text)" class="form-control" formControlName="description" required>
+          </div>
+
+<!--          <div class="col-md-12 mb-4">-->
+<!--            <a  class="add-service-button" (click)="sectionFlag = false">-->
+<!--              <span>-->
+<!--                Add-->
+<!--              </span>-->
+<!--              <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add_circle"></mat-icon>-->
+<!--            </a>-->
+<!--          </div>-->
+        </ng-container>
+      </div>
+
+      <div class="btn-grp">
+        <button class="mat-custom-button" mat-button matStepperNext>Ok <span class="tick"></span></button>
+        <span class="ml-2">press <strong>Enter ↵</strong></span>
+      </div>
+
+    </div>
+    <div class="col-md-6 rightView-Wrapper">
+      <div class="div-header">
+        <h2>Contact Headings</h2>
+      </div>
+      <div class="row center-wrapper">
+        <div class="col-md-12 text-center pointer-envents-none">
+          <div class="about-text" contentEditable=true data-text="Get In Touch">{{form.get('title')?.value}}</div>
+
+
+        </div>
+        <div class="col-md-12 text-center pointer-envents-none">
+          <div class="introduce-text" contentEditable=true data-text="Let’s Discuss How I Can Help You">{{form.get('description')?.value}}</div>
+          <div class="divider-line">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+</form>

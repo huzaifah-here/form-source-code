@@ -1,0 +1,70 @@
+<form [formGroup]="form">
+
+  <div class="row min-h-100vh stepper-wrapper">
+    <div class="col-md-6  pl-40 position-relative align-self-center">
+      <div class="row">
+        <div class="col-md-12 mb-5">
+          <h1>
+            <span>1 <svg class="renderer-components-block-counter__arrow-icon css-who0lh" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></svg></span>
+            Enter your name</h1>
+          <!--      <p>-->
+          <!--        (Upload your profile image and we will crop it for you to fit in this section)-->
+          <!--      </p>-->
+          <input (focus)="scrollToTop()" placeholder="(Leave blank to keep default text)" class="form-control" formControlName="name" required>
+
+        </div>
+      </div>
+      <div class="col-md-12 mb-5 ">
+        <h1 class="">
+          <span>2 <svg class="renderer-components-block-counter__arrow-icon css-who0lh" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></svg></span>
+          Enter up to 5 skills (seperate with comma) </h1>
+          <div class="position-relative">
+            <input (focus)="scrollToTop()" placeholder="(Leave blank to keep default text)" rows="1" class="form-control" formControlName="skill" required>
+            <a (click)="addItem()" class="plusIcon"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add_circle"></mat-icon></a>
+    
+          </div>
+     
+        <div class="row mt-2">
+          <div class="col-md-4" *ngFor="let value of itemsArray().getRawValue() ; let i = index">
+            <a  class="add-service-button2" >{{itemsArray().at(i)?.get('name')?.value}}
+              <mat-icon class="ml-3" aria-hidden="false" (click)="editItem(i)" aria-label="Example home icon" fontIcon="edit"></mat-icon>
+              <mat-icon aria-hidden="false" (click)="deleteItem(i)" aria-label="Example home icon" fontIcon="delete"></mat-icon>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-md-12 mb-4">
+        <div class="btn-grp">
+          <button class="mat-custom-button" mat-button matStepperNext>Ok <span class="tick"></span></button>
+          <span class="ml-2">press <strong>Enter ↵</strong></span>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="col-md-6 p-0 align-self-center first-right-section">
+      <div class="iFrame-">
+<!--        <iframe class="elementor-video" frameborder="0" mute="1" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" title="Envato Stories | Andy Wilkerson from Parallelus (ThemeForest)" src="https://www.youtube.com/embed/EfTUpvxEbqc?autoplay=1&origin=http://example.com" id="widget2"></iframe>-->
+
+      </div>
+
+      <div class="div-header">
+        <h2>Homepage text</h2>
+      </div>
+      <div class="bg-overlay"></div>
+      <div class="center-align">
+        <h1 data-text="I'M MARY SMITH">{{form.get('name')?.value  ?   form.get('name')?.value : 'I\'M MARY SMITH'}}</h1>
+
+        <h6 data-text="Web designer">{{getSkills()  ? getSkills() :  'Web designer' }}</h6>
+      </div>
+
+
+
+    </div>
+  </div>
+
+
+
+</form>

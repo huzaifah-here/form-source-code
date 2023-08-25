@@ -1,0 +1,16 @@
+<form class = "tp-form">
+  {{myControl.value}}
+  <mat-form-field class = "tp-full-width">
+    <input type = "text"
+           placeholder = "Services"
+           aria-label = "Number"
+           matInput
+           [formControl] = "myControl"
+           [matAutocomplete] = "auto">
+    <mat-autocomplete #auto = "matAutocomplete" (optionSelected)="onSelected()">
+      <mat-option *ngFor = "let state of states" [value] = "state?.value">
+        {{state?.display}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>

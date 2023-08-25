@@ -1,0 +1,167 @@
+<form [formGroup]="form">
+
+  <div class="row min-h-100vh stepper-wrapper">
+    <div class="col-md-6 p-0 pl-40 position-relative align-self-center">
+      <div class="row">
+
+        <ng-container *ngIf="!serviceFlag">
+        <div class="col-md-12 mb-5">
+          <h1>
+
+            <span>8 <svg class="renderer-components-block-counter__arrow-icon css-who0lh" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></svg></span>
+
+            Services</h1>
+          <input (focus)="scrollToTop()" placeholder="(Leave blank to keep default text)" class="form-control" formControlName="title" required>
+        </div>
+        <div class="col-md-12 ">
+          <h1 class="pl-35">
+            <span>9 <svg class="renderer-components-block-counter__arrow-icon css-who0lh" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></svg></span>
+
+
+            What Can I Do</h1>
+
+            <input (focus)="scrollToTop()" placeholder="(Leave blank to keep default text)" class="form-control" formControlName="description" required>
+
+            
+
+        </div>
+          <div class="row mt-2">
+            <div class="col-md-4 pl-1 pr-1" *ngFor="let value of servicesArray().getRawValue() ; let i = index">
+              <a  class="add-service-button2" (click)="editService(i)">{{servicesArray().at(i)?.get('service')?.value}}
+                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon>
+                <mat-icon aria-hidden="false" (click)="deleteItem(i)" aria-label="Example home icon" fontIcon="delete"></mat-icon>
+              </a>
+            </div>
+          </div>
+          <a  class="add-service-button plusIcon" (click)="toggleServices()"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add_circle"></mat-icon> Add more services
+            
+          </a>
+         
+          <div class="btn-grp">
+            <button class="mat-custom-button" mat-button matStepperNext>Ok <span class="tick"></span></button>
+            <span class="ml-2">press <strong>Enter ↵</strong></span>
+          </div>
+        </ng-container>
+
+        <ng-container *ngIf="serviceFlag">
+          <div class="col-md-12 mb-4">
+            <h1 class="pl-35">
+              <span>10 <svg class="renderer-components-block-counter__arrow-icon css-who0lh" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></svg></span>
+
+
+              Select Your Services</h1>
+            <app-simple-auto-complete [formControlValue]="serviceInitValue"   [placeholder]="form.get('service')?.value" (onSelectValue)="onSelectValue($event)"></app-simple-auto-complete>
+          </div>
+          <div class="col-md-12">
+            <h1 class="pl-35">
+              <span>11 <svg class="renderer-components-block-counter__arrow-icon css-who0lh" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></svg></span>
+
+
+              You can keep or edit the text below</h1>
+            <textarea (focus)="scrollToTop()" placeholder="(Leave blank to keep default text)"  rows="1" class="form-control" formControlName="aboutDescription" required></textarea>
+          </div>
+          <div class="btn-grp">
+            <button class="mat-custom-button" (click)="toggleServices()" mat-button >Back <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="keyboard_backspace"></mat-icon></button>
+            &nbsp;&nbsp;
+            <button class="mat-custom-button" (click)="addService()" mat-button >Add <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add_circle"></mat-icon></button>
+          </div>
+        </ng-container>
+
+      </div>
+
+
+
+    </div>
+    <!-- <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-12">
+          {{form.get('about')?.value}}
+        </div>
+        <div class="col-md-12">
+          {{form.get('introduceMyself')?.value}}
+        </div>
+        <div class="col-md-12">
+          {{form.get('aboutSectionContent')?.value}}
+        </div>
+      </div>
+    </div> -->
+
+    <div class="col-md-6  third-step">
+      <ng-container *ngIf="!serviceFlag">
+        <div class="div-header">
+          <h2>Services Headings</h2>
+        </div>
+
+        <div class="rightView-Wrapper">
+          <div class="row center-wrapper">
+            <div class="col-md-12 text-center pointer-envents-none">
+              <div class="about-text" contentEditable=true data-text="SERVICES">{{form.get('title')?.value}}</div>
+    
+    
+            </div>
+            <div class="col-md-12 text-center pointer-envents-none">
+              <div class="introduce-text" contentEditable=true data-text="Services I Offer">{{form.get('description')?.value}}</div>
+              <div class="divider-line">
+    
+              </div>
+            </div>
+    
+            <div class="row">
+              <div class="col-md-4" *ngFor="let value of servicesArray().getRawValue() ; let i = index">
+                <div class="row m-auto">
+                  <div class="col-md-12 text-center">
+                    <span class="lnr lnr-earth" *ngIf="servicesArray().at(i)?.get('service')?.value == 'WEB DESIGN'"></span>
+                    <span class="lnr lnr-frame-expand" *ngIf="servicesArray().at(i)?.get('service')?.value == 'GRAPHIC DESIGN'"></span>
+                    <span class="lnr lnr-laptop" *ngIf="servicesArray().at(i)?.get('service')?.value == 'DEVELOPMENT'"></span>
+                    <span class="lnr lnr-code" *ngIf="servicesArray().at(i)?.get('service')?.value == 'BRANDING'"></span>
+                    <span class="lnr lnr-picture" *ngIf="servicesArray().at(i)?.get('service')?.value == 'PHOTOGRAPHY'"></span>
+                    <span class="lnr lnr-book" *ngIf="servicesArray().at(i)?.get('service')?.value == 'USER EXPERIENCE'"></span>
+                  </div>
+                  <div class="col-md-12 text-center pointer-envents-none">
+                    <h3 class="h3" contentEditable=true data-text="WEB DESIGN">{{servicesArray().at(i)?.get('service')?.value}}</h3>
+                    <div class="aboutContent-text" contentEditable=true data-text="">{{servicesArray().at(i)?.get('aboutDescription')?.value}}</div>
+    
+                  </div>
+                </div>
+              </div>
+    
+            </div>
+    
+          </div>
+        </div>
+      
+      </ng-container>
+      <ng-container *ngIf="serviceFlag">
+        <div class="div-header">
+          <h2>Services {{getServicesCount()}}</h2>
+        </div>
+        <div class="rightView-Wrapper">
+          <div class="row center-wrapper">
+            <div class="col-md-12">
+              <div class="row m-auto">
+                <div class="col-md-12 text-center">
+                  <span class="lnr lnr-earth" *ngIf="form?.get('service')?.value == 'WEB DESIGN'"></span>
+                  <span class="lnr lnr-frame-expand" *ngIf="form?.get('service')?.value == 'GRAPHIC DESIGN'"></span>
+                  <span class="lnr lnr-laptop" *ngIf="form?.get('service')?.value == 'DEVELOPMENT'"></span>
+                  <span class="lnr lnr-code" *ngIf="form?.get('service')?.value == 'BRANDING'"></span>
+                  <span class="lnr lnr-picture" *ngIf="form?.get('service')?.value == 'PHOTOGRAPHY'"></span>
+                  <span class="lnr lnr-book" *ngIf="form?.get('service')?.value == 'USER EXPERIENCE'"></span>
+                </div>
+                <div class="col-md-12 text-center pointer-envents-none">
+                  <h3 class="h3" contentEditable=true data-text="WEB DESIGN">{{form?.get('service')?.value}}</h3>
+                  <div class="aboutContent-text" contentEditable=true data-text="">{{form?.get('aboutDescription')?.value}}</div>
+  
+                </div>
+              </div>
+            </div>
+  
+          </div>
+        </div>
+       
+      </ng-container>
+    </div>
+  </div>
+
+
+
+</form>

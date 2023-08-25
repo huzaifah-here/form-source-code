@@ -1,0 +1,544 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import "~@angular/material/prebuilt-themes/indigo-pink.css"; // your theme
+
+@import "assets/css/style.css";
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+.mat-stepper-horizontal, .mat-stepper-vertical {
+    background-color: transparent;
+}
+.min-h-100vh{
+    min-height: 100vh;
+}
+.mat-vertical-content{
+    padding: 0 0px 0px 0px !important;
+}
+.mat-vertical-content-container{
+    margin-left: 15px !important;
+}
+.form-control:focus {
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    border-color: transparent;
+    outline: 0;
+    box-shadow: none;
+}
+.pl-40{
+    padding-left: 45px !important;
+    padding-right: 45px  !important;
+}
+.rightView-Wrapper{
+    // background-color: #f5f5f5;
+    padding: 0px 0px;
+    position: relative;
+    height: calc(100vh - 140px);
+}
+.stepper-wrapper{
+  .div-header{
+    height: 140px;
+    background-color: rgb(221 221 221);
+    display: flex;
+    align-items: center;
+    h2 {
+        font-size: 60px;
+        font-weight: 800;
+        line-height: 64px;
+        margin-bottom: 0px;
+        letter-spacing: 1px;
+        text-transform: capitalize;
+        color: #2f2d2d;
+        z-index: 999;
+        position: relative;
+        text-align: center;
+        width: 100%;
+        display: block;
+
+    }
+  }
+
+    max-width: 1920px;
+    margin: 0 auto;
+    .mat-mdc-text-field-wrapper{
+        color: #275eb8 !important;
+        border-bottom: 2px solid #275eb8 !important;
+        border: 0;
+        border-radius: 0;
+        padding-left: 0;
+        font-size: 26px;
+        background-color: transparent;
+    }
+    .tp-form {
+        max-width: 100%;
+        width: 100%;
+    }
+    h1{
+        color: #000;
+        font-size: 22px;
+        display: flex;
+        margin-bottom: 15px;
+        font-weight: 400;
+        padding-left: 5px;
+        span{
+            color: #0142ac !important;
+            font-size: 14px;
+            margin-right: 10px;
+            font-weight: 600;
+            position: absolute;
+            left: 10px;
+            svg{
+                width: 16px;
+                path{
+                    fill:#0142ac ;
+                }
+            }
+        }
+    }
+    p{
+        color: #757575;
+        font-size: 12px;
+    }
+    .form-control{
+        color: #275eb8!important;
+        // color: #aaadb1 !important;
+        border-bottom: 2px solid #dfdfdfa1 !important;
+        border: 0;
+        border-radius: 0;
+        padding-left: 0;
+        font-size: 26px;
+
+    }
+    .btn-grp{
+        display: flex;
+        align-items: center;
+        margin-top: 15px;
+        .ml-2{
+            margin-left: 15px;
+        }
+        .mat-custom-button{
+            font-size: 18px!important;
+            min-height: 40px;
+            width: 86px;
+            background: rgb(1, 66, 172);
+            color: rgb(255, 255, 255) !important;
+            z-index: 1;
+            border-radius: 4px;
+            border-width: 0px;
+            .tick{
+                border-bottom: 3px solid #fff;
+                border-right: 3px solid #fff;
+                display: inline-block;
+                height: 14px;
+                margin-left: 6px;
+                transform: rotate(45deg);
+                width: 7px;
+            }
+          }
+    }
+    ::placeholder {
+        color: #dfdfdf !important;
+        opacity: 1; /* Firefox */
+        font-weight: 300;
+      }
+
+      :-ms-input-placeholder { /* Internet Explorer 10-11 */
+       color: #dfdfdf !important;
+       font-weight: 300;
+      }
+
+      ::-ms-input-placeholder { /* Microsoft Edge */
+       color: #dfdfdf !important;
+       font-weight: 300;
+      }
+
+}
+
+.first-right-section{
+    position: relative;
+    height: 100vh;
+    .iFrame-{
+        position:absolute ;
+        top: 0px;
+        width: 100%;
+
+        iframe{
+            height: 100vh;
+            width: 100%;
+
+        }
+
+    }
+    .bg-overlay{
+        &::after{
+            background-color: #0000009c;
+            height: 100vh;
+            width: 100%;
+            display: block;
+            z-index: 1;
+            position: absolute;
+            content: "";
+        }
+    }
+    h1{
+        font-size: 24px;
+        line-height: 24px;
+        margin-bottom: 20px;
+        letter-spacing: 10px;
+        text-transform: uppercase;
+        color: #fff;
+        z-index: 999;
+        position: relative;
+        text-align: center;
+        width: 100%;
+        display: block;
+    }
+    h6{
+        font-size: 60px;
+        line-height: 60px;
+        font-weight: 800;
+        z-index: 999;
+        position: relative;
+        text-align: center;
+        width: 100%;
+        display: block;
+        color: #fff;
+    }
+    .center-align{
+        position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    width: 100%;
+    }
+}
+
+.center-wrapper{
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+}
+[contentEditable=true]:empty:not(:focus):before {
+    content: attr(data-text)
+  }
+ .pointer-envents-none{
+    pointer-events:none;
+
+    div:focus {
+      outline:0;
+      content: attr(data-text);
+    }
+ }
+
+ .about-text{
+    color: #000000;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    padding: 0px 70px;
+ }
+
+ .introduce-text{
+    text-align: center;
+    color: #999999;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    padding: 0px 70px;
+ }
+
+ .aboutContent-text{
+    text-align: center;
+    color: #000000;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 0px 70px;
+ }
+ .divider-line{
+    position: relative;
+    margin-bottom: 50px;
+
+    &::before{
+        position: absolute;
+        content: '';
+        width: 30px;
+        height: 2px;
+        color: #777;
+        background-color: #777;
+        top: 0;
+        left: 50%;
+      transform: translate(-50%, -50%);
+    }
+ }
+
+ .mat-mdc-autocomplete-panel{
+    padding: 0px 0px;
+    background: #fff;
+    box-shadow: none;
+
+
+
+    .mdc-list-item{
+      align-items: center!important;
+      background: rgba(1,66,172,.1)!important;
+      border-color: #0142ac!important;
+      border-radius: 2px;
+      color: #0142ac!important;
+      cursor: pointer!important;
+      display: flex;
+      flex-direction: row-reverse!important;
+      height: inherit;
+      max-width: 100%!important;
+      min-height: 40px!important;
+      opacity: 1!important;
+      outline: 0!important;
+      padding-bottom: 4px!important;
+      padding-top: 4px!important;
+      position: relative!important;
+      transition-duration: .1s!important;
+      transition-property: background-color,color,border-color,opacity,box-shadow!important;
+      transition-timing-function: ease-out!important;
+      width: 100%;
+      word-break: break-word!important;
+      border: 1px solid;
+      margin-bottom: 5px;
+      .mdc-list-item__primary-text{
+        color: #0142ac!important;
+      }
+      .mat-pseudo-checkbox{
+        position: absolute;
+    right: 20px;
+      }
+    }
+  }
+
+  .mat-mdc-form-field{
+    &:hover{
+        .mat-mdc-form-field-focus-overlay {
+            opacity: 0;
+        }
+    }
+  }
+  .mat-mdc-form-field-input-control{
+    color: #275eb8 !important;
+    border: 0;
+    border-radius: 0;
+    padding-left: 0;
+    font-size: 26px;
+}
+.third-step{
+    .aboutContent-text {
+        text-align: center;
+        color: #000000;
+        font-size: 12px;
+        font-weight: 400;
+        padding: 0px 0px;
+    }
+    h3{
+        font-weight: 600;
+        margin-top: 5px;
+        margin-bottom: 5px
+    }
+    .lnr{
+        font-size: 36px;
+        color: #0042ac;
+    }
+    .col-md-4{
+        padding-right: 0px;
+        margin-bottom: 15px;
+    }
+}
+
+.Done-wrapper{
+    min-height: 100vh;
+    position: relative;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: #f5f5f5;
+    .done-wrapper-inner{
+        text-align: center;
+        h2{
+            color: #000;
+        font-size: 22px;
+        margin-bottom: 15px;
+        font-weight: 500;
+        }
+        .back-btn{
+            font-size: 18px !important;
+        min-height: 40px;
+        width: 110px;
+        background: rgb(1, 66, 172);
+        color: rgb(255, 255, 255) !important;
+        z-index: 1;
+        border-radius: 4px;
+        border-width: 0px;
+        margin-right: 10px;
+        }
+        .reset-btn{
+            font-size: 18px !important;
+        min-height: 40px;
+        width: 110px;
+        background: #24b7a4;
+        color: rgb(255, 255, 255) !important;
+        z-index: 1;
+        border-radius: 4px;
+        border-width: 0px;
+        }
+    }
+
+}
+.btn-sample{
+    background-color: #0440a36b;
+    border: 0;
+    max-width: 100%;
+    width: 320px;
+    padding: 22px 10px;
+    font-size: 24px;
+    display: inline-flex;
+    justify-content: center;
+    color: #fff;
+    border: 2px solid #00000045;
+    text-transform: uppercase;
+    mat-icon{
+        margin-right: 10px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .center-wrapper {
+        position: relative;
+        top: 0;
+        transform: initial;
+        left: 0;
+        margin-top: 20px;
+    }
+    .mat-vertical-content-container {
+        margin-left: 0px !important;
+    }
+    .col-md-6{
+        padding: 0px !important;
+    }
+    .pl-40 {
+        order: 2;
+        padding-top: 20px !important;
+        padding-bottom: 20px  !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        .mb-5{
+            h1{
+                padding-left: 35px;
+            }
+        }
+
+    }
+
+    .first-right-section{
+        height: 40vh;
+        .iFrame-{
+            position:absolute ;
+            top: 0px;
+            width: 100%;
+
+            iframe{
+                height: 50vh;
+                width: 100%;
+            }
+        }
+        .bg-overlay{
+            &::after{
+                height: 30vh;
+
+            }
+        }
+        h6{
+            font-size: 36px;
+            line-height: 36px;
+        }
+    }
+    .min-h-100vh {
+        min-height: auto;
+    }
+    .stepper-wrapper{
+        .form-control{
+            font-size: 18px;
+        }
+        .mat-mdc-text-field-wrapper {
+            font-size: 18px;
+        }
+        h1 {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+         .div-header
+         {
+            height: 80px;
+            h2 {
+                font-size: 36px !important;
+                font-weight: 800 !important;
+                line-height: 36px !important;
+            }
+         }
+
+    }
+    .row{
+        padding: 0px  !important;
+    }
+
+    .add-service-button2{
+        margin-bottom: 5px !important;
+    }
+    .plusIcon{
+        top: 10px !important;
+    }
+    .mb-5 {
+        margin-bottom: 1rem !important;
+    }
+    .rightView-Wrapper {
+        height: auto !important;
+    }
+    .aboutContent-text{
+        padding: 0px 15px !important;
+    }
+    .divider-line {
+        margin-bottom: 20px !important;
+    }
+    .pl-35{
+        padding-left: 35px !important;
+    }
+    .pl-1 , .pr-1{
+        padding-left: 20px !important;
+    }
+    .padding-row{
+        padding: 0px 15px !important;
+    }
+    .min-h-100vhh{
+        min-height: 90vh;
+    }
+    .center-mobile{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 99;
+    }
+}
+.image-{
+  max-width: 220px;
+  max-height: 220px;
+}

@@ -1,0 +1,60 @@
+.get-in-touch label input, .get-in-touch label textarea {
+  font-family: 'Raleway';
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+.get-in-touch label input {
+  padding: 15px;
+  border: 1px solid #bbb;
+  color: #444;
+  border-radius: 2px;
+  font-size: 12px;
+  background-color: transparent;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+.get-in-touch label textarea {
+  border: 1px solid #bbb;
+  color: #444;
+  background-color: transparent;
+  height: 100px;
+  margin-bottom: 0px;
+}
+.get-in-touch input.wpcf7-submit {
+  border-color: #24b7a4;
+  color: #24b7a4;
+  padding: 10px 34px 9px 46px !important;
+  border: 2px solid #24b7a4 !important;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: "Raleway", sans-serif, 'Font Awesome 5 Free';
+  font-size: 14px;
+  border-radius: 0px;
+}
+.submit-btn svg g {
+  fill: #24b7a4;
+}
+
+.contact-box h6 {
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: 'Raleway';
+  color: #000;
+  margin-bottom: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 0px;
+  font-size: initial;
+}
+
+.contact-box p a, .contact-box p {
+  font-size: 15px;
+  color: #000;
+  font-family: raleway;
+  text-align: start;
+}
+.contact-box {
+  margin-bottom: 34px;
+}

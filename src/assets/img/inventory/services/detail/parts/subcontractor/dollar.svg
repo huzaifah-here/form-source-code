@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="47" height="47" viewBox="0 0 47 47">
+  <defs>
+    <filter id="Rectangle_1267" x="0" y="0" width="47" height="47" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="4.5" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_6548" data-name="Group 6548" transform="translate(-769.5 -493.5)">
+    <g transform="matrix(1, 0, 0, 1, 769.5, 493.5)" filter="url(#Rectangle_1267)">
+      <g id="Rectangle_1267-2" data-name="Rectangle 1267" transform="translate(13.5 13.5)" fill="#1c1c1c" stroke="#f60" stroke-width="0.5">
+        <rect width="20" height="20" rx="4" stroke="none"/>
+        <rect x="0.25" y="0.25" width="19.5" height="19.5" rx="3.75" fill="none"/>
+      </g>
+    </g>
+    <text id="_" data-name="$" transform="translate(789 521)" fill="#fbfaff" font-size="13" font-family="Poppins-SemiBold, Poppins" font-weight="600"><tspan x="0" y="0">$</tspan></text>
+  </g>
+</svg>
