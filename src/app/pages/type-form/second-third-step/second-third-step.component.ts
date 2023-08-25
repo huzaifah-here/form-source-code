@@ -1,13 +1,12 @@
 import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Subscription} from "rxjs";
-
 @Component({
-  selector: 'app-second-step',
-  templateUrl: './second-step.component.html',
-  styleUrls: ['./second-step.component.scss']
+  selector: 'app-second-third-step',
+  templateUrl: './second-third-step.component.html',
+  styleUrls: ['./second-third-step.component.scss']
 })
-export class SecondStepComponent implements OnInit,OnDestroy{
+export class SecondThirdStepComponent implements OnInit,OnDestroy{
   form: FormGroup = this.initForms();
   @Output() onFormValueChange = new EventEmitter<any>();
   //@ts-ignore
@@ -38,9 +37,8 @@ export class SecondStepComponent implements OnInit,OnDestroy{
   }
   initForms(){
     return  this._formBuilder.group({
-      about: ['', Validators.required],
-      introduceMyself: ['', Validators.required],
-
+    
+      aboutSectionContent: ['', Validators.required],
     });
 
 

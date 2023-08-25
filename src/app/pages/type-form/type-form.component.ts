@@ -21,6 +21,7 @@ export class TypeFormComponent implements OnInit {
   formGroup: FormGroup = this._formBuilder.group({
     firstCtrl: [''],
     secondCtrl: [''],
+    secondthirdCtrl: [''],
     thirdCtrl: [''],
     fourthCtrl: [''],
     fifthCtrl: [''],
@@ -50,7 +51,7 @@ export class TypeFormComponent implements OnInit {
       skills: skills,
 
       about: from?.secondCtrl?.about ? from.secondCtrl.name :  'About',
-      aboutSectionContent: from?.secondCtrl?.aboutSectionContent ? from.secondCtrl.aboutSectionContent :  this.dummyText(),
+      aboutSectionContent: from?.secondthirdCtrl?.aboutSectionContent ? from.secondthirdCtrl.aboutSectionContent :  this.dummyText(),
       introduceMyself: from?.secondCtrl?.introduceMyself ? from.secondCtrl.introduceMyself :  'LET ME INTRODUCE MYSELF',
 
       serviceTitle: from?.thirdCtrl?.title ? from.thirdCtrl.title :  'Services',

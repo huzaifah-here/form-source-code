@@ -20,6 +20,7 @@
   transition: background 0.1s ease 0s;
   background: rgba(1, 66, 172, 0.1);
   cursor: pointer;
+  z-index: 0;
 }
 .input-file {
   position: absolute;

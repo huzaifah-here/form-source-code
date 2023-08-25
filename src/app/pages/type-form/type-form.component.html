@@ -13,6 +13,9 @@
       <app-second-step (onFormValueChange)="setFormValue('secondCtrl', $event)"></app-second-step>
     </mat-step>
     <mat-step [stepControl]="formGroup">
+      <app-second-third-step (onFormValueChange)="setFormValue('secondthirdCtrl', $event)"></app-second-third-step>
+    </mat-step>
+    <mat-step [stepControl]="formGroup">
       <app-writing-samples ></app-writing-samples>
     </mat-step>
     <mat-step [stepControl]="formGroup">

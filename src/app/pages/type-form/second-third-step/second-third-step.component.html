@@ -5,18 +5,11 @@
       <div class="row">
         <div class="col-md-12 mb-5">
           <h1>
-             <span>3 <svg class="renderer-components-block-counter__arrow-icon css-who0lh" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></svg></span>
-            About Me</h1>
-          <input (focus)="scrollToTop()" placeholder="(Leave blank to keep default text)" class="form-control" formControlName="about" required>
-        </div>
 
-        <div class="col-md-12 mb-5">
-          <h1>
-            <span>4 <svg class="renderer-components-block-counter__arrow-icon css-who0lh" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></svg></span>
-            Let me introduce myself</h1>
-          <input (focus)="scrollToTop()" placeholder="(Leave blank to keep default text)" class="form-control" formControlName="introduceMyself" required>
+            <span>5 <svg class="renderer-components-block-counter__arrow-icon css-who0lh" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></svg></span>
+            Enter About section content</h1>
+          <textarea style="height: 200px;" (focus)="scrollToTop()" placeholder="(Leave blank to keep default text)" rows="1" class="form-control" formControlName="aboutSectionContent" required></textarea>
         </div>
-
       </div>
 
       <div class="btn-grp">
@@ -27,27 +20,27 @@
     </div>
     <div class="col-md-6 ">
       <div class="div-header">
-        <h2>About me</h2>
+        <h2>About Section</h2>
       </div>
       <div class="rightView-Wrapper">
-        <div class="row center-wrapper">
-          <div class="col-md-12 text-center pointer-envents-none">
+        <div class="row center-wrapper" style="top: 34% !important">
+          <!-- <div class="col-md-12 text-center pointer-envents-none">
             <div class="about-text" contentEditable=true data-text="About me">{{form.get('about')?.value}}</div>
-  
-  
           </div>
           <div class="col-md-12 text-center pointer-envents-none">
             <div class="introduce-text" contentEditable=true data-text="LET ME INTRODUCE MYSELF">{{form.get('introduceMyself')?.value}}</div>
-            <!-- <div class="divider-line"></div> -->
-          </div>
-          <!-- <div class="col-md-12 text-center pointer-envents-none">
+            <div class="divider-line">
+  
+            </div>
+          </div> -->
+          <div class="col-md-12 text-center pointer-envents-none">
             <div class="aboutContent-text" contentEditable=true data-text="Vestibulum sed hendrerit diam. Pellentesque vestibulum massa dui, in aliquam quam pharetra at. Curabitur ultricies auctor turpis, vitae suscipit turpis aliquam sit amet. Etiam nec sagittis velit. Ut laoreet eros vitae tincidunt mollis. Pellentesque non ultrices ipsum odio interdum.
   
   Cras sed turpis iaculis, sodales dolor vitae, iaculis lorem. Duis consectetur quam auctor venenatis in purus. Nulla vel semper erat. Sed non tempus nisl.
   
   ">{{form.get('aboutSectionContent')?.value}}</div>
   
-          </div> -->
+          </div>
         </div>
       </div>
     
