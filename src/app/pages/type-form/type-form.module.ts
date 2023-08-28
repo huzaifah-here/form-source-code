@@ -25,6 +25,8 @@ import { UploadCvComponent } from './upload-cv/upload-cv.component';
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import { SecondThirdStepComponent } from './second-third-step/second-third-step.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { ThirdFourthStepComponent } from './third-fourth-step/third-fourth-step.component';
+import { FourthFifthStepComponent } from './fourth-fifth-step/fourth-fifth-step.component';
 // import {IconModule} from '@visurel/iconify-angular';
 
 
@@ -43,7 +45,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     ZeroStepComponent,
     WritingSamplesComponent,
     UploadCvComponent,
-    SecondThirdStepComponent
+    SecondThirdStepComponent,
+    ThirdFourthStepComponent,
+    FourthFifthStepComponent
   ],
   imports: [
     CommonModule,

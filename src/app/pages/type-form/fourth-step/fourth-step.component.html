@@ -6,28 +6,32 @@
         <ng-container *ngIf="!itemsSectionFlag">
         <div class="col-md-12 mb-5">
           <h1>
-            <span>12 <svg class="renderer-components-block-counter__arrow-icon css-who0lh" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></svg></span>
+            <span>11 <svg class="renderer-components-block-counter__arrow-icon css-who0lh" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></svg></span>
             Testimonials</h1>
           <input (focus)="scrollToTop()" placeholder="(Leave blank to keep default text)" class="form-control" formControlName="title" required>
         </div>
         <div class="col-md-12">
           <h1 class="pl-35">
-            <span>13 <svg class="renderer-components-block-counter__arrow-icon css-who0lh" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></svg></span>
+            <span>12 <svg class="renderer-components-block-counter__arrow-icon css-who0lh" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></svg></span>
             Words from my happy clients</h1>
           <input (focus)="scrollToTop()" placeholder="(Leave blank to keep default text)" class="form-control" formControlName="description" required>
         </div>
           <div class="row mt-2">
-            <div class="col-md-4 pl-1 pr-1" *ngFor="let value of itemsArray().getRawValue() ; let i = index">
+            <!-- <div class="col-md-4 pl-1 pr-1" *ngFor="let value of itemsArray().getRawValue() ; let i = index">
               <a  class="add-service-button2" >{{itemsArray().at(i)?.get('name')?.value}}
                 <mat-icon aria-hidden="false" (click)="editItem(i)" aria-label="Example home icon" fontIcon="edit"></mat-icon>
                 <mat-icon aria-hidden="false" (click)="deleteItem(i)" aria-label="Example home icon" fontIcon="delete"></mat-icon>
               </a>
-            </div>
+            </div> -->
           </div>
-          <a  class="add-service-button plusIcon" (click)="toggleItems()"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add_circle"></mat-icon> Add Testimonial
+          <!-- <a  class="add-service-button plusIcon" (click)="toggleItems()"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add_circle"></mat-icon> Add Testimonial
             
-          </a>
+          </a> -->
+          <section class="example-section">
+            <mat-checkbox class="example-margin" color="primary">I'll do this later</mat-checkbox>
+          </section>
           <div class="btn-grp">
+            
             <button class="mat-custom-button" mat-button matStepperNext>Ok <span class="tick"></span></button>
             <span class="ml-2">press <strong>Enter ↵</strong></span>
           </div>
@@ -56,6 +60,7 @@
             &nbsp;&nbsp;
             <button class="mat-custom-button" (click)="addItem()" mat-button >Add <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add_circle"></mat-icon></button>
           </div>
+         
         </ng-container>
       </div>
 
@@ -64,7 +69,7 @@
     <div class="col-md-6 position-relative third-step">
       <ng-container *ngIf="!itemsSectionFlag">
         <div class="div-header">
-          <h2>Testimonial Headings</h2>
+          <h2>Testimonial Headers</h2>
         </div>
 
         <div class="rightView-Wrapper">
@@ -82,7 +87,7 @@
             </div>
     
               <div class="row">
-              <div class="col-md-4" *ngFor="let value of itemsArray().getRawValue() ; let i = index">
+              <!-- <div class="col-md-4" *ngFor="let value of itemsArray().getRawValue() ; let i = index">
                 <div class="row m-auto">
                   <div class="col-md-12 text-center pointer-envents-none">
                     <h3 class="h3" contentEditable=true >{{itemsArray().at(i)?.get('name')?.value}}</h3>
@@ -91,7 +96,8 @@
     
                   </div>
                 </div>
-              </div>
+              </div> -->
+
               <!--          <div class="col-md-4">-->
               <!--            <div class="row m-auto">-->
               <!--              <div class="col-md-12 text-center">-->

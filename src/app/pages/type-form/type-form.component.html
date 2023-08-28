@@ -16,16 +16,22 @@
       <app-second-third-step (onFormValueChange)="setFormValue('secondthirdCtrl', $event)"></app-second-third-step>
     </mat-step>
     <mat-step [stepControl]="formGroup">
-      <app-writing-samples ></app-writing-samples>
+      <app-writing-samples (onFormValueChange)="setFormValue('writing', $event)" ></app-writing-samples>
     </mat-step>
     <mat-step [stepControl]="formGroup">
-      <app-upload-cv></app-upload-cv>
+      <app-upload-cv (onFormValueChange)="setFormValue('fileCV', $event)"></app-upload-cv>
     </mat-step>
     <mat-step [stepControl]="formGroup">
       <app-third-step (onFormValueChange)="setFormValue('thirdCtrl', $event)"></app-third-step>
     </mat-step>
     <mat-step [stepControl]="formGroup">
+      <app-third-fourth-step (onFormValueChange)="setFormValue('thirdfourthCtrl', $event)"></app-third-fourth-step>
+    </mat-step>
+    <mat-step [stepControl]="formGroup">
       <app-fourth-step (onFormValueChange)="setFormValue('fourthCtrl', $event)"></app-fourth-step>
+    </mat-step>
+    <mat-step [stepControl]="formGroup">
+      <app-fourth-fifth-step (onFormValueChange)="setFormValue('fourthfifithCtrl', $event)"></app-fourth-fifth-step>
     </mat-step>
     <mat-step [stepControl]="formGroup">
       <app-fifth-step (onFormValueChange)="setFormValue('fifthCtrl', $event)"></app-fifth-step>

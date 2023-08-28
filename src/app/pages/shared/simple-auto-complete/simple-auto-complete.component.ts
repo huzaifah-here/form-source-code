@@ -28,7 +28,7 @@ export class SimpleAutoCompleteComponent {
   }
   //build list of states as map of key-value pairs
   loadStates() {
-    const allStates = 'GRAPHIC DESIGN, DEVELOPMENT, BRANDING, PHOTOGRAPHY, USER EXPERIENCE';
+    const allStates = 'WEB DESIGN, GRAPHIC DESIGN, DEVELOPMENT, BRANDING, PHOTOGRAPHY, USER EXPERIENCE';
     this.states =  allStates.split(/, +/g).map( function (state) {
       return {
         value: state.toUpperCase(),

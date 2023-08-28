@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { Component, Output, EventEmitter, OnInit, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -7,17 +8,18 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './writing-samples.component.html',
   styleUrls: ['./writing-samples.component.scss'],
 })
-export class WritingSamplesComponent {
+export class WritingSamplesComponent implements OnInit,OnDestroy {
   form: FormGroup = this.initForms();
   fileName = '';
   showUploadButton: boolean = true;
-
+  @Output() onFormValueChange = new EventEmitter<any>();
+  formSubscription: Subscription = new Subscription();
   constructor(
     private _formBuilder: FormBuilder,
     private _snackBar: MatSnackBar
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {this.initForValueChangesSubscription()}
   scrollToTop() {
     // console.log('scroll to top');
     // window.scroll({
@@ -25,6 +27,9 @@ export class WritingSamplesComponent {
     //   left: 0,
     //   behavior: 'smooth'
     // });
+  }
+  ngOnDestroy() {
+    this.formSubscription.unsubscribe();
   }
   initForms() {
     return this._formBuilder.group({
@@ -72,11 +77,18 @@ export class WritingSamplesComponent {
         const binaryString = _event?.target?.result;
         const fileData = binaryString;
         this.form.get(name)?.setValue(fileData);
+        
       };
+      this.onFormValueChange.emit("FilenameYO");
       this.showUploadButton = false;
     }
   }
-
+  initForValueChangesSubscription(){
+    this.formSubscription = this.form.valueChanges.subscribe((value)=>{
+      console.log('valueChanges', value.email);
+      this.onFormValueChange.emit("YOOOOOO")
+    });
+  }
   downloadFile() {
     if (!this.showUploadButton) {
       const fileData = this.form.get('writingSamples')?.value;

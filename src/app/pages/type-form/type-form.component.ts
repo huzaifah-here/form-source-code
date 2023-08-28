@@ -26,6 +26,7 @@ export class TypeFormComponent implements OnInit {
     fourthCtrl: [''],
     fifthCtrl: [''],
     sixthCtrl: [''],
+    writingSamples:['']
   });
 
   dummyText(){
@@ -50,17 +51,23 @@ export class TypeFormComponent implements OnInit {
       name:  from?.firstCtrl?.name ? from.firstCtrl.name :  'I\'M MARY SMITH',
       skills: skills,
 
-      about: from?.secondCtrl?.about ? from.secondCtrl.name :  'About',
+      about: from?.secondCtrl?.about ? from.secondthirdCtrl.name :  'About',
       aboutSectionContent: from?.secondthirdCtrl?.aboutSectionContent ? from.secondthirdCtrl.aboutSectionContent :  this.dummyText(),
       introduceMyself: from?.secondCtrl?.introduceMyself ? from.secondCtrl.introduceMyself :  'LET ME INTRODUCE MYSELF',
 
       serviceTitle: from?.thirdCtrl?.title ? from.thirdCtrl.title :  'Services',
       serviceDescription: from?.thirdCtrl?.description ? from.thirdCtrl.description :  'Services I Offer',
-      services: JSON.stringify(from?.thirdCtrl?.services),
+      
+      services: JSON.stringify(from?.thirdfourthCtrl?.services),
+      // aboutDescription: from?.thirdfourthCtrl?.aboutDescription ,
 
       testimonialTitle: from?.fourthCtrl?.title ? from.thirdCtrl.title :  'Testimonials',
       testimonialDescription: from?.fourthCtrl?.description ? from.thirdCtrl.description :  'Words from my happy clients',
-      testimonials: JSON.stringify(from?.fourthCtrl?.testimonials),
+      // testimonials: JSON.stringify(from?.fourthCtrl?.testimonials),
+      writingSamples: from?.writing?.writingSamples ,
+      resume: from?.fileCV?.fileCV.resume,
+
+      testimonials: JSON.stringify(from?.fourthfifthCtrl?.testimonials),
 
       contactSectionTitle: from?.fifthCtrl?.title ? from.fifthCtrl.title :  'Get In Touch',
       contactSectionDescription: from?.fifthCtrl?.description ? from.fifthCtrl.description :  'Let\'s Discuss How Can I Help you with your project',
@@ -71,6 +78,7 @@ export class TypeFormComponent implements OnInit {
       contactSectionEmail: from?.sixthCtrl?.email ? from.sixthCtrl.email :  'email@sitename.com',
     };
     console.log('data', data);
+    return
     this.getRequestInProgress = true;
     this.backendApiService.postApi(`save/data`, data)
       .pipe(

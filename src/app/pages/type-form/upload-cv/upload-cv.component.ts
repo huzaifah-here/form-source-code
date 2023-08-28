@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -11,6 +11,7 @@ export class UploadCvComponent implements OnInit {
   form: FormGroup = this.initForms();
   fileName = '';
   showUploadButton: boolean = true;
+    @Output() onFormValueChange = new EventEmitter<any>();
   constructor(
     private _formBuilder: FormBuilder,
     private _snackBar: MatSnackBar
@@ -30,14 +31,14 @@ export class UploadCvComponent implements OnInit {
   }
   initForms(){
     return  this._formBuilder.group({
-      writingSamples: ['', Validators.required],
+      resume: ['', Validators.required],
     });
 
 
   }
   deleteAction() {
     console.log('deleteAction Pressed');
-    this.form.get('writingSamples')?.setValue('');
+    this.form.get('resume')?.setValue('');
     this.showUploadButton = true;
   }
 
@@ -83,7 +84,7 @@ export class UploadCvComponent implements OnInit {
 
   downloadFile() {
     if (!this.showUploadButton) {
-      const fileData = this.form.get('writingSamples')?.value;
+      const fileData = this.form.get('resume')?.value;
       const a = document.createElement('a');
       a.href = fileData;
       a.download = this.fileName; // Set the file name

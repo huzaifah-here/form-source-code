@@ -1,0 +1,144 @@
+<form [formGroup]="form">
+
+    <div class="row min-h-100vh stepper-wrapper">
+      <div class="col-md-6 p-0 pl-40 position-relative align-self-center">
+        <div class="row">
+          <!-- <ng-container *ngIf="!itemsSectionFlag">
+          <div class="col-md-12 mb-5">
+            <h1>
+              <span>12 <svg class="renderer-components-block-counter__arrow-icon css-who0lh" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></svg></span>
+              Testimonials</h1>
+            <input (focus)="scrollToTop()" placeholder="(Leave blank to keep default text)" class="form-control" formControlName="title" required>
+          </div>
+          <div class="col-md-12">
+            <h1 class="pl-35">
+              <span>13 <svg class="renderer-components-block-counter__arrow-icon css-who0lh" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></svg></span>
+              Words from my happy clients</h1>
+            <input (focus)="scrollToTop()" placeholder="(Leave blank to keep default text)" class="form-control" formControlName="description" required>
+          </div>
+            <div class="row mt-2">
+              <div class="col-md-4 pl-1 pr-1" *ngFor="let value of itemsArray().getRawValue() ; let i = index">
+                <a  class="add-service-button2" >{{itemsArray().at(i)?.get('name')?.value}}
+                  <mat-icon aria-hidden="false" (click)="editItem(i)" aria-label="Example home icon" fontIcon="edit"></mat-icon>
+                  <mat-icon aria-hidden="false" (click)="deleteItem(i)" aria-label="Example home icon" fontIcon="delete"></mat-icon>
+                </a>
+              </div>
+            </div>
+            <a  class="add-service-button plusIcon" (click)="toggleItems()"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add_circle"></mat-icon> Add Testimonial
+              
+            </a>
+            <div class="btn-grp">
+              <button class="mat-custom-button" mat-button matStepperNext>Ok <span class="tick"></span></button>
+              <span class="ml-2">press <strong>Enter ↵</strong></span>
+            </div>
+          </ng-container> -->
+  
+          <ng-container >
+          <div class="col-md-12 mb-4">
+            <h1 class="pl-35">
+              <span>14 <svg class="renderer-components-block-counter__arrow-icon css-who0lh" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></svg></span>
+              Add Testimonials</h1>
+          </div>
+          <div class="col-md-12 mb-4">
+            <h1>Enter Name Of Client</h1>
+            <input  placeholder="Type Answer Here" class="form-control" formControlName="name" required>
+          </div>
+          <div class="col-md-12 mb-4">
+            <h1>Enter Position Of Client</h1>
+            <input  placeholder="Type Answer Here" class="form-control" formControlName="position" required>
+          </div>
+          <div class="col-md-12">
+            <h1>Enter About Section Content</h1>
+            <textarea  placeholder="Type Answer Here" class="form-control" formControlName="text" required></textarea>
+          </div>
+            <div class="btn-grp">
+              <!-- <button class="mat-custom-button" (click)="toggleItems()" mat-button >Back <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="keyboard_backspace"></mat-icon></button>
+              &nbsp;&nbsp;
+              <button class="mat-custom-button" (click)="addItem()" mat-button >Add <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add_circle"></mat-icon></button> -->
+              <button class="mat-custom-button" mat-button matStepperNext>Ok <span class="tick"></span></button>
+              <span class="ml-2">press <strong>Enter ↵</strong></span>
+            </div>
+          </ng-container>
+        </div>
+  
+  
+      </div>
+      <div class="col-md-6 position-relative third-step">
+        <ng-container *ngIf="!itemsSectionFlag">
+          <div class="div-header">
+            <h2>Testimonial Headers</h2>
+          </div>
+  
+          <div class="rightView-Wrapper">
+            <div class="row center-wrapper">
+              <!-- <div class="col-md-12 text-center pointer-envents-none">
+                <div class="about-text" contentEditable=true data-text="Testimonials">{{form.get('title')?.value}}</div>
+      
+      
+              </div>
+              <div class="col-md-12 text-center pointer-envents-none">
+                <div class="introduce-text" contentEditable=true data-text="What Some Of My Happy Clients Have To Say">{{form.get('description')?.value}}</div>
+                <div class="divider-line">
+      
+                </div>
+              </div> -->
+      
+               
+                <div class="col-md-4" *ngFor="let value of itemsArray().getRawValue() ; let i = index">
+                  <div class="row m-auto">
+                    <div class="col-md-12 text-center pointer-envents-none">
+                      <h3 class="h3" contentEditable=true >{{itemsArray().at(i)?.get('name')?.value}}</h3>
+                      <div class="introduce-text"  contentEditable=true >{{itemsArray().at(i)?.get('position')?.value}}</div>
+                      <div class="aboutContent-text" contentEditable=true data-text="">{{itemsArray().at(i)?.get('text')?.value}}</div>
+      
+                    </div>
+                  </div>
+                </div>
+      
+      
+            
+            </div>
+          </div>
+  
+       
+        </ng-container>
+        <ng-container *ngIf="itemsSectionFlag">
+          <div class="div-header">
+            <h2>Testimonial {{getServicesCount()}}</h2>
+          </div>
+          <div class="row center-wrapper">
+            <div class="row">
+              <div class="col-md-12" >
+                <div class="row m-auto">
+                  <div class="col-md-12 text-center pointer-envents-none">
+                    
+                   
+                    
+                    <div  *ngFor="let value of itemsArray().getRawValue() ; let i = index">
+                        <div class="row m-auto">
+                          <div class="col-md-12 text-center pointer-envents-none">
+                            <h3 class="h3" contentEditable=true >{{form.get('name')?.value}}</h3>
+                            <h3 *ngIf="form?.get('name')?.value == ''" class="h3" contentEditable=true >Alice Peter</h3>
+                            <div class="introduce-text"  contentEditable=true >{{form.get('position')?.value}}</div>
+                            <div *ngIf="form?.get('position')?.value == ''" class="introduce-text"  contentEditable=true >Web Designer</div>
+                            <div class="aboutContent-text" contentEditable=true data-text="">{{form.get('text')?.value}}</div>
+                            <div *ngIf="form?.get('text')?.value == ''" class="aboutContent-text" contentEditable=true data-text="">Mauris lacinia, lorem id dictum feugiat, felis diam egestas eros, et facilisis mauris nisi a enim. Pellentesque at ipsum congue.</div>
+            
+                          </div>
+                        </div>
+                      </div>
+        
+                
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  
+  
+  
+  </form>
+  

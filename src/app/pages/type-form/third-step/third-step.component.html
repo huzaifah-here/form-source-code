@@ -25,7 +25,7 @@
             
 
         </div>
-          <div class="row mt-2">
+          <!-- <div class="row mt-2">
             <div class="col-md-4 pl-1 pr-1" *ngFor="let value of servicesArray().getRawValue() ; let i = index">
               <a  class="add-service-button2" (click)="editService(i)">{{servicesArray().at(i)?.get('service')?.value}}
                 <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon>
@@ -35,7 +35,7 @@
           </div>
           <a  class="add-service-button plusIcon" (click)="toggleServices()"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add_circle"></mat-icon> Add more services
             
-          </a>
+          </a> -->
          
           <div class="btn-grp">
             <button class="mat-custom-button" mat-button matStepperNext>Ok <span class="tick"></span></button>
@@ -63,7 +63,7 @@
           <div class="btn-grp">
             <button class="mat-custom-button" (click)="toggleServices()" mat-button >Back <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="keyboard_backspace"></mat-icon></button>
             &nbsp;&nbsp;
-            <button class="mat-custom-button" (click)="addService()" mat-button >Add <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add_circle"></mat-icon></button>
+            <span class="mat-custom-button" (click)="addService()" mat-button >Add <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add_circle"></mat-icon></span>
           </div>
         </ng-container>
 
@@ -109,17 +109,17 @@
             <div class="row">
               <div class="col-md-4" *ngFor="let value of servicesArray().getRawValue() ; let i = index">
                 <div class="row m-auto">
-                  <div class="col-md-12 text-center">
+                  <!-- <div class="col-md-12 text-center">
                     <span class="lnr lnr-earth" *ngIf="servicesArray().at(i)?.get('service')?.value == 'WEB DESIGN'"></span>
                     <span class="lnr lnr-frame-expand" *ngIf="servicesArray().at(i)?.get('service')?.value == 'GRAPHIC DESIGN'"></span>
                     <span class="lnr lnr-laptop" *ngIf="servicesArray().at(i)?.get('service')?.value == 'DEVELOPMENT'"></span>
                     <span class="lnr lnr-code" *ngIf="servicesArray().at(i)?.get('service')?.value == 'BRANDING'"></span>
                     <span class="lnr lnr-picture" *ngIf="servicesArray().at(i)?.get('service')?.value == 'PHOTOGRAPHY'"></span>
                     <span class="lnr lnr-book" *ngIf="servicesArray().at(i)?.get('service')?.value == 'USER EXPERIENCE'"></span>
-                  </div>
+                  </div> -->
                   <div class="col-md-12 text-center pointer-envents-none">
-                    <h3 class="h3" contentEditable=true data-text="WEB DESIGN">{{servicesArray().at(i)?.get('service')?.value}}</h3>
-                    <div class="aboutContent-text" contentEditable=true data-text="">{{servicesArray().at(i)?.get('aboutDescription')?.value}}</div>
+                    <!-- <h3 class="h3" contentEditable=true data-text="WEB DESIGN">{{servicesArray().at(i)?.get('service')?.value}}</h3>
+                    <div class="aboutContent-text" contentEditable=true data-text="">{{servicesArray().at(i)?.get('aboutDescription')?.value}}</div> -->
     
                   </div>
                 </div>
