@@ -1,3 +1,4 @@
+import { Subscription } from 'rxjs';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -11,6 +12,7 @@ export class UploadCvComponent implements OnInit {
   form: FormGroup = this.initForms();
   fileName = '';
   showUploadButton: boolean = true;
+  formSubscription: Subscription = new Subscription();
     @Output() onFormValueChange = new EventEmitter<any>();
   constructor(
     private _formBuilder: FormBuilder,
@@ -20,6 +22,7 @@ export class UploadCvComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.initForValueChangesSubscription()
   }
   scrollToTop(){
     // console.log('scroll to top');
@@ -33,8 +36,13 @@ export class UploadCvComponent implements OnInit {
     return  this._formBuilder.group({
       resume: ['', Validators.required],
     });
-
-
+  }
+  initForValueChangesSubscription(){
+    this.formSubscription = this.form.valueChanges.subscribe((value)=>{
+      console.log('valueChanges', value);
+      this.onFormValueChange.emit(value);
+     
+    });
   }
   deleteAction() {
     console.log('deleteAction Pressed');

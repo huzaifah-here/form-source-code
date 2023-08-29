@@ -16,7 +16,7 @@ export class FourthFifthStepComponent {
   serviceInitValue = '';
   defaultTestimonials = [
     {
-      'title': '',
+      'name': '',
       'position': '',
       'text': ''
     },
@@ -47,6 +47,15 @@ export class FourthFifthStepComponent {
   initForValueChangesSubscription(){
     this.formSubscription = this.form.valueChanges.subscribe((value)=>{
       console.log('valueChanges', value);
+      // this.defaultTestimonials[0].title = value.name
+      // this.defaultTestimonials[0].position = value.position
+      // this.defaultTestimonials[0].text = value.text
+
+      value.testimonials[0].name = value.name
+      value.testimonials[0].position = value.position
+      value.testimonials[0].text = value.text
+
+      console.log('this.defaultTestimonials', this.defaultTestimonials);
       this.onFormValueChange.emit(value)
     });
   }
@@ -65,7 +74,7 @@ export class FourthFifthStepComponent {
   }
   initDefaultServices(){
     this.defaultTestimonials.forEach((value) => {
-      this.itemsArray().push(this.service(value?.title, value?.position, value?.text));
+      this.itemsArray().push(this.service(value?.name, value?.position, value?.text));
     });
   }
   service(service = '', aboutDescription = '', text = ''){
@@ -128,6 +137,7 @@ export class FourthFifthStepComponent {
       return this.itemsArray().length + 1;
     }
   }
+  
   ngOnDestroy() {
     this.formSubscription.unsubscribe();
   }

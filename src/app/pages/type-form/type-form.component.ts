@@ -23,10 +23,13 @@ export class TypeFormComponent implements OnInit {
     secondCtrl: [''],
     secondthirdCtrl: [''],
     thirdCtrl: [''],
+    thirdfourthCtrl:[''],
     fourthCtrl: [''],
+    fourthfifthCtrl: [''],
     fifthCtrl: [''],
     sixthCtrl: [''],
-    writingSamples:['']
+    writing:[''],
+    res:['']
   });
 
   dummyText(){
@@ -51,21 +54,21 @@ export class TypeFormComponent implements OnInit {
       name:  from?.firstCtrl?.name ? from.firstCtrl.name :  'I\'M MARY SMITH',
       skills: skills,
 
-      about: from?.secondCtrl?.about ? from.secondthirdCtrl.name :  'About',
+      about: from?.secondCtrl?.about ? from.secondCtrl.about :  'About',
       aboutSectionContent: from?.secondthirdCtrl?.aboutSectionContent ? from.secondthirdCtrl.aboutSectionContent :  this.dummyText(),
       introduceMyself: from?.secondCtrl?.introduceMyself ? from.secondCtrl.introduceMyself :  'LET ME INTRODUCE MYSELF',
 
       serviceTitle: from?.thirdCtrl?.title ? from.thirdCtrl.title :  'Services',
       serviceDescription: from?.thirdCtrl?.description ? from.thirdCtrl.description :  'Services I Offer',
       
-      services: JSON.stringify(from?.thirdfourthCtrl?.services),
+      services: JSON.stringify(from?.thirdfourthCtrl?.services) ? JSON.stringify(from?.thirdfourthCtrl?.services): "Services",
       // aboutDescription: from?.thirdfourthCtrl?.aboutDescription ,
 
-      testimonialTitle: from?.fourthCtrl?.title ? from.thirdCtrl.title :  'Testimonials',
-      testimonialDescription: from?.fourthCtrl?.description ? from.thirdCtrl.description :  'Words from my happy clients',
+      testimonialTitle: from?.fourthCtrl?.title ? from.fourthCtrl.title :  'Testimonials',
+      testimonialDescription: from?.fourthCtrl?.description ? from.fourthCtrl.description :  'Words from my happy clients',
       // testimonials: JSON.stringify(from?.fourthCtrl?.testimonials),
-      writingSamples: from?.writing?.writingSamples ,
-      resume: from?.fileCV?.fileCV.resume,
+      writingSamples: from?.writing?.writingSamples ? from.writing.writingSamples: "writing sample" ,
+      resume: from?.res?.resume ?  from?.res?.resume : "resume",
 
       testimonials: JSON.stringify(from?.fourthfifthCtrl?.testimonials),
 
@@ -78,7 +81,6 @@ export class TypeFormComponent implements OnInit {
       contactSectionEmail: from?.sixthCtrl?.email ? from.sixthCtrl.email :  'email@sitename.com',
     };
     console.log('data', data);
-    return
     this.getRequestInProgress = true;
     this.backendApiService.postApi(`save/data`, data)
       .pipe(

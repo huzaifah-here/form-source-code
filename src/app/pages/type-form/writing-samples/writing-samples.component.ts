@@ -79,14 +79,15 @@ export class WritingSamplesComponent implements OnInit,OnDestroy {
         this.form.get(name)?.setValue(fileData);
         
       };
-      this.onFormValueChange.emit("FilenameYO");
+     
       this.showUploadButton = false;
     }
   }
   initForValueChangesSubscription(){
     this.formSubscription = this.form.valueChanges.subscribe((value)=>{
-      console.log('valueChanges', value.email);
-      this.onFormValueChange.emit("YOOOOOO")
+      console.log('valueChanges', value);
+      this.onFormValueChange.emit(value);
+     
     });
   }
   downloadFile() {
